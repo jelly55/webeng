@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Tables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/tables.css">
+<link rel="stylesheet" href="../styles/components/sidebar.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 h-screen bg-blue-600 text-white p-6">
+            <div class="mb-8">
+                <img src="1.png" alt="Weather App Logo" class="w-32 mx-auto">
+            </div>
+            <nav>
+                <ul>
+                    <li class="mb-4">
+                        <a href="../index.html" class="block py-2 px-4 hover:bg-blue-700 rounded">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="tables.html" class="block py-2 px-4 bg-blue-700 rounded">Tables</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <h1 class="text-3xl font-bold mb-8">Weather Forecast Tables</h1>
+
+            <!-- Search Bar -->
+            <div class="mb-8">
+                <input type="text" id="cityInput" placeholder="Enter city name" class="p-2 border rounded mr-2">
+                <button id="searchBtn" class="bg-blue-500 text-white p-2 rounded">Search</button>
+            </div>
+
+            <!-- Forecast Table -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 id="cityName" class="text-2xl font-bold mb-4">City Name</h2>
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2 text-left">Date</th>
+                            <th class="p-2 text-left">Temperature</th>
+                            <th class="p-2 text-left">Weather</th>
+                            <th class="p-2 text-left">Humidity</th>
+                            <th class="p-2 text-left">Wind Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forecastTable">
+                        <!-- Forecast data will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-4 flex justify-center">
+                <button id="prevPage" class="bg-blue-500 text-white p-2 rounded mr-2">&lt; Previous</button>
+                <span id="currentPage" class="p-2">Page 1</span>
+                <button id="nextPage" class="bg-blue-500 text-white p-2 rounded ml-2">Next &gt;</button>
+            </div>
+
+            <!-- Filters -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Filters</h3>
+                <button id="sortAsc" class="bg-gray-200 p-2 rounded mr-2">Sort Temperatures (Ascending)</button>
+                <button id="sortDesc" class="bg-gray-200 p-2 rounded mr-2">Sort Temperatures (Descending)</button>
+                <button id="filterRain" class="bg-gray-200 p-2 rounded mr-2">Show Rainy Days</button>
+                <button id="highestTemp" class="bg-gray-200 p-2 rounded">Show Highest Temperature Day</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/api/weather.js"></script>
+   
+<script src="scripts/main.js"></script>
+    <script src="../scripts/utils/helpers.js"></script>
+    <script src="../scripts/utils/validators.js"></script>
+    <script src="../scripts/components/sidebar.js"></script>
+    <script src="../scripts/tables.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* styles/components/sidebar.css */
+
+.sidebar {
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar-link {
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive sidebar */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 0;
+      overflow: hidden;
+    }
+  
+    .sidebar.open {
+      width: 250px;
+    }
+  }

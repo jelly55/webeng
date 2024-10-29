@@ -1,0 +1,39 @@
+/* styles/style.css */
+
+/* Custom properties for colors and fonts */
+:root {
+    --primary-color: #3b82f6;  /* Tailwind's blue-500 */
+    --secondary-color: #1e40af;  /* Tailwind's blue-800 */
+    --text-color: #1f2937;  /* Tailwind's gray-800 */
+    --background-color: #f3f4f6;  /* Tailwind's gray-100 */
+  }
+  
+  /* Global styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+  }
+  
+  /* Utility classes */
+  .transition-all {
+    transition: all 0.3s ease;
+  }

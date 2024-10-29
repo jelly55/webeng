@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/dashboard.css">
+<link rel="stylesheet" href="styles/components/sidebar.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 h-screen bg-blue-600 text-white p-6">
+            <div class="mb-8">
+                <img src="1.png" alt="Weather App Logo" class="w-32 mx-auto">
+            </div>
+            <nav>
+                <ul>
+                    <li class="mb-4">
+                        <a href="index.html" class="block py-2 px-4 bg-blue-700 rounded">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="pages/tables.html" class="block py-2 px-4 hover:bg-blue-700 rounded">Tables</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <h1 class="text-3xl font-bold mb-8">Weather Dashboard</h1>
+
+            <!-- Search Bar -->
+            <div class="mb-8">
+                <input type="text" id="cityInput" placeholder="Enter city name" class="p-2 border rounded mr-2">
+                <button id="searchBtn" class="bg-blue-500 text-white p-2 rounded">Search</button>
+            </div>
+
+            <!-- Weather Widget -->
+            <div id="weatherWidget" class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 id="cityName" class="text-2xl font-bold mb-4">City Name</h2>
+                <div class="flex items-center mb-4">
+                    <img id="weatherIcon" src="" alt="Weather Icon" class="w-16 h-16 mr-4">
+                    <div>
+                        <p id="temperature" class="text-4xl font-bold">--°C</p>
+                        <p id="weatherDescription" class="text-gray-600">Weather Description</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <p>Humidity: <span id="humidity">--%</span></p>
+                    <p>Wind Speed: <span id="windSpeed">-- m/s</span></p>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4">Temperature Forecast (5 Days)</h3>
+                    <canvas id="tempChart"></canvas>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4">Weather Conditions</h3>
+                    <canvas id="conditionsChart"></canvas>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4">Temperature Changes</h3>
+                    <canvas id="tempChangeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">Weather Chatbot</h2>
+                <div id="chatMessages" class="h-64 overflow-y-auto mb-4 p-4 border rounded"></div>
+                <div class="flex">
+                    <input type="text" id="chatInput" placeholder="Ask about weather..." class="flex-1 p-2 border rounded-l">
+                    <button id="sendMsg" class="bg-blue-500 text-white p-2 rounded-r">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/config.js"></script>
+    <script src="scripts/api/weather.js"></script>
+    <script src="scripts/api/chatbot.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/components/charts.js"></script>
+    <script src="scripts/components/widgets.js"></script>
+    <script src="scripts/components/sidebar.js"></script>
+    <script src="scripts/utils/helpers.js"></script>
+    <script src="scripts/utils/validators.js"></script>
+    
+</body>
+</html>

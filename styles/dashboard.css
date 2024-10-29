@@ -1,0 +1,30 @@
+/* styles/dashboard.css */
+
+/* Weather widget styles */
+.weather-widget {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+  }
+  
+  /* Chart container styles */
+  .chart-container {
+    height: 300px;
+  }
+  
+  /* Chatbot styles */
+  .chat-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  
+  .user-message {
+    background-color: #e5e7eb;  /* Tailwind's gray-200 */
+    align-self: flex-end;
+  }
+  
+  .bot-message {
+    background-color: #bfdbfe;  /* Tailwind's blue-200 */
+    align-self: flex-start;
+  }
